@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <project name="pmd" default="pmd" basedir="."> 
-  <property environment="env"/>  
-  <property name="ExampleProject.location" value="../test"/>  
+  <property name="doc" location="doc" />               <!-- Root for all documentation: -->
+<property name="pmddoc" location="${doc}/pmddoc" />  <!-- PMD results -->
+
   <!-- 定义pmd的classpath，均为下载的pmd包解压后lib目录下的jar包-->  
   <path id="pmd.classpath"> 
     <pathelement location="${basedir}/lib/asm-3.2.jar"> 
@@ -19,6 +20,15 @@
       </pathelement> 
     </pathelement> 
   </path>  
+  
+  <taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask">
+    <classpath>
+        <fileset dir="C:\development\pmd-bin-5.0-alpha">
+            <include name="lib/*.jar"/>    <!-- also includes pmd's file, which has all the rulesets I need. -->
+        </fileset>
+    </classpath>
+</taskdef>
+  
   <taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask" classpathref="pmd.classpath"/>  
   <target name="pmd"> 
     <!-- 定义代码检测规则，这里直接列出规则imports.xml和java-unusedcode规则，本例注释了，使用下面一种在另一文件中定义规则集-->  
