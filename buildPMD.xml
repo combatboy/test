@@ -2,21 +2,20 @@
 
 <project name="pmd" default="pmd" basedir=".">
 	
- <property environment="env">
- <property name="ExampleProject.location" value="../ExampleProject">
+
 	<!-- 定义pmd的classpath，均为下载的pmd包解压后lib目录下的jar包-->
 <path id="pmd.classpath">
-  <pathelement location="${basedir}/lib/asm-3.2.jar"/>
-  <pathelement location="${basedir}/lib/jaxen-1.1.1.jar"/>
-  <pathelement location="${basedir}/lib/junit-4.4.jar"/>
-  <pathelement location="${basedir}/lib/pmd-5.0.4.jar"/>
+  <pathelement location="${basedir}/lib/asm-3.2.jar">
+  <pathelement location="${basedir}/lib/jaxen-1.1.1.jar">
+  <pathelement location="${basedir}/lib/junit-4.4.jar">
+  <pathelement location="${basedir}/lib/pmd-5.0.4.jar">
 
   <!--
   <fileset dir="${basedir}/lib/">
       <include name="**/*.jar">
   
   -->
-</path></include>
+</pathelement></pathelement></pathelement></pathelement></path>  
 <target depends="pmd_html" name="pmd">
   <taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask" classpathref="pmd.classpath">
    <!-- 定义代码检测规则，这里直接列出规则imports.xml和java-unusedcode规则，本例注释了，使用下面一种在另一文件中定义规则集-->
