@@ -1,9 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
- <pmd rulesetfiles="${basedir}/pmdrule.xml" encoding="UTF-8"> 
-      <!-- 输出HTML格式的报告-->  
-      <formatter type="xml" tofile="pmd_report.html" toconsole="true"> 
-        <fileset dir="${ExampleProject.location}/src"> 
-          <include name="**/*.java"/> 
-        </fileset> 
-      </formatter> 
+ <pmd  encoding="UTF-8"> 
+     
     </pmd> 
