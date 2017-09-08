@@ -14,43 +14,40 @@
       <include name="**/*.jar">
   
   --> 
-          </pathelement>
-        </pathelement>
-      </pathelement>
-    </pathelement>
+          </pathelement> 
+        </pathelement> 
+      </pathelement> 
+    </pathelement> 
   </path>  
-   <taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask" classpathref="pmd.classpath"> 
-  <target  name="pmd"> 
-      <!-- 定义代码检测规则，这里直接列出规则imports.xml和java-unusedcode规则，本例注释了，使用下面一种在另一文件中定义规则集-->  
-      <!--
+  <taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask" classpathref="pmd.classpath"/>  
+  <target name="pmd"> 
+    <!-- 定义代码检测规则，这里直接列出规则imports.xml和java-unusedcode规则，本例注释了，使用下面一种在另一文件中定义规则集-->  
+    <!--
   	<pmd rulesetfiles="rulesets/java/imports.xml,java-unusedcode">
    -->  
-      <!-- 定义PMD检测规则所在的文件，规则集在pmdrule.xml文件中定义-->  
-      <pmd rulesetfiles="${basedir}/pmdrule.xml" encoding="UTF-8"> 
-        <!-- 输出XML格式的报告-->  
-        <formatter type="html" tofile="pmd_report.html" toconsole="true"> 
-          <!-- 静态代码检测ExampleProject工程下src目录下的所有java文件-->  
-          <fileset dir="${ExampleProject.location}/src"> 
-            <include name="**/*.java"></include>
-          </fileset> 
-        </formatter>
-      </pmd> 
-    </taskdef>
+    <!-- 定义PMD检测规则所在的文件，规则集在pmdrule.xml文件中定义-->  
+    <pmd rulesetfiles="${basedir}/pmdrule.xml" encoding="UTF-8"> 
+      <!-- 输出XML格式的报告-->  
+      <formatter type="html" tofile="pmd_report.html" toconsole="true"> 
+        <!-- 静态代码检测ExampleProject工程下src目录下的所有java文件-->  
+        <fileset dir="${ExampleProject.location}/src"> 
+          <include name="**/*.java"/> 
+        </fileset> 
+      </formatter> 
+    </pmd> 
   </target>  
-  
-   <taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask" classpathref="pmd.classpath"/> 
-   
+  <taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask" classpathref="pmd.classpath"/>  
   <target name="pmd"> 
-      <!--
+    <!--
   	<pmd rulesetfiles="rulesets/java/imports.xml,java-unusedcode">
   -->  
-      <pmd rulesetfiles="${basedir}/pmdrule.xml" encoding="UTF-8"> 
-        <!-- 输出HTML格式的报告-->  
-        <formatter type="xml" tofile="pmd_report.html" toconsole="true"> 
-          <fileset dir="${ExampleProject.location}/src"> 
-            <include name="**/*.java"></include>
-          </fileset> 
-        </formatter>
-      </pmd> 
+    <pmd rulesetfiles="${basedir}/pmdrule.xml" encoding="UTF-8"> 
+      <!-- 输出HTML格式的报告-->  
+      <formatter type="xml" tofile="pmd_report.html" toconsole="true"> 
+        <fileset dir="${ExampleProject.location}/src"> 
+          <include name="**/*.java"/> 
+        </fileset> 
+      </formatter> 
+    </pmd> 
   </target> 
 </project>
