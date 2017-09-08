@@ -40,7 +40,7 @@
       <!-- 输出XML格式的报告-->  
       <formatter type="html" tofile="pmd_report.html" toconsole="true"> 
         <!-- 静态代码检测ExampleProject工程下src目录下的所有java文件-->  
-        <fileset dir="${ExampleProject.location}/src"> 
+        <fileset dir="${app}/src"> 
           <include name="**/*.java"/> 
         </fileset> 
       </formatter> 
@@ -54,7 +54,7 @@
     <pmd rulesetfiles="${basedir}/pmdrule.xml" encoding="UTF-8"> 
       <!-- 输出HTML格式的报告-->  
       <formatter type="xml" tofile="pmd_report.html" toconsole="true"> 
-        <fileset dir="${ExampleProject.location}/src"> 
+        <fileset dir="${app}/src"> 
           <include name="**/*.java"/> 
         </fileset> 
       </formatter> 
