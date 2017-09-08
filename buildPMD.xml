@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project name="pmd" default="pmd" basedir=".">
-	
+	 <property environment="env"/>  
+	<property name="ExampleProject.location" value="../test"/>  
 
 	<!-- 定义pmd的classpath，均为下载的pmd包解压后lib目录下的jar包-->
 <path id="pmd.classpath">
