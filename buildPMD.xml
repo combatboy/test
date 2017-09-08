@@ -19,8 +19,8 @@
       </pathelement>
     </pathelement>
   </path>  
-  <target name="pmd"> 
-    <taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask" classpathref="pmd.classpath"> 
+   <taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask" classpathref="pmd.classpath"> 
+  <target  name="pmd"> 
       <!-- 定义代码检测规则，这里直接列出规则imports.xml和java-unusedcode规则，本例注释了，使用下面一种在另一文件中定义规则集-->  
       <!--
   	<pmd rulesetfiles="rulesets/java/imports.xml,java-unusedcode">
@@ -37,8 +37,10 @@
       </pmd> 
     </taskdef>
   </target>  
-  <target > 
-    <taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask" classpathref="pmd.classpath"> 
+  
+   <taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask" classpathref="pmd.classpath"/> 
+   
+  <target name="pmd"> 
       <!--
   	<pmd rulesetfiles="rulesets/java/imports.xml,java-unusedcode">
   -->  
@@ -50,6 +52,5 @@
           </fileset> 
         </formatter>
       </pmd> 
-    </taskdef>
   </target> 
 </project>
