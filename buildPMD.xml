@@ -16,7 +16,7 @@
       <include name="**/*.jar">
   
   -->
-</include></path>
+</include></pathelement></pathelement></pathelement></pathelement></path>  
 <target depends="pmd_html" name="pmd">
   <taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask" classpathref="pmd.classpath">
    <!-- 定义代码检测规则，这里直接列出规则imports.xml和java-unusedcode规则，本例注释了，使用下面一种在另一文件中定义规则集-->
