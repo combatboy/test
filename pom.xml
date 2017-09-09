@@ -3,10 +3,10 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.example.administrator.myapplication</groupId>
-    <artifactId>ToolsTest</artifactId>
+    <artifactId>myapplication</artifactId>
     <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>ToolsTest</name>
+    <name>myapplication</name>
     <url>http://maven.apache.org</url>
 
     <properties>
