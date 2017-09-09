@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="pmd" default="pmd" basedir=".">
+<path>
+  <PathElement location="${basedir}/lib/asm-3.3.1jar"></PathElement>
+  <PathElement location="${basedir}/lib/jaxen-1.1.6.jar"></PathElement>
+  <PathElement location="${basedir}/lib/junit-4.4.jar"></PathElement>
+  <PathElement location="${basedir}/lib/pmd.jar"></PathElement>
+  <PathElement location="${basedir}/lib/pmd-core-5.7.0.jar"></PathElement>
+  <PathElement location="${basedir}/lib/pmd-java-5.7.0.jar"></PathElement>
+  <fileset dir="${basedir}/lib/">
+      <include name="**/*.jar">
+      </include>
+      </fileset>
+</path>
+  <taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask" />
+  <target name="pmd">
+    <!-- 定义代码检测规则，这里直接列出规则imports.xml和java-unusedcode规则，本例注释了，使用下面一种在另一文件中定义规则集-->
+    <!--
+  	<pmd rulesetfiles="rulesets/java/imports.xml,java-unusedcode">
+   -->
+    <!-- 定义PMD检测规则所在的文件，规则集在pmdrule.xml文件中定义-->
+    <pmd rulesetfiles="${basedir}/pmdrule.xml" encoding="UTF-8" >
+      <!-- 输出XML格式的报告-->
+      <formatter type="html" tofile="pmd_report.html" toconsole="true">
+        <!-- 静态代码检测ExampleProject工程下src目录下的所有java文件-->
+        <fileset dir="${app}/src">
+          <include name="**/*.java"/>
+        </fileset>
+      </formatter>
+    </pmd>
+  </target>
+</project>
