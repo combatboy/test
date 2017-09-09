@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<project name="pmd" default="pmd" basedir=".">
+<project name="pmd" default="pmd" basedir="C:\Users\Administrator\.jenkins\plugins\pmd\WEB-INF">
 <path>
   <PathElement location="${basedir}/lib/asm-3.3.1jar"></PathElement>
   <PathElement location="${basedir}/lib/jaxen-1.1.6.jar"></PathElement>
@@ -19,7 +19,7 @@
   	<pmd rulesetfiles="rulesets/java/imports.xml,java-unusedcode">
    -->
     <!-- 定义PMD检测规则所在的文件，规则集在pmdrule.xml文件中定义-->
-    <pmd rulesetfiles="${basedir}/pmdrule.xml" encoding="UTF-8" >
+    <pmd rulesetfiles="C:\Users\Administrator\.jenkins\workspace\Style_123\pmdrule.xml" encoding="UTF-8" >
       <!-- 输出XML格式的报告-->
       <formatter type="html" tofile="pmd_report.html" toconsole="true">
         <!-- 静态代码检测ExampleProject工程下src目录下的所有java文件-->
