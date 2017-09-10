@@ -6,9 +6,8 @@
 <artifactId>test</artifactId>
 <version>0.1-SNAPSHOT</version>
 <packaging>jar</packaging>
-
 <name>test</name>
-
+<url>http://maven.apache.org</url>
 <dependencies>
 
 <dependency>
